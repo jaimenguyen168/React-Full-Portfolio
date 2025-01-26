@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader.jsx";
 import Island from "../models/Island.jsx";
+import Sky from "../models/Sky.jsx";
 
 const Home = () => {
   const adjustIslandForScreenSize = () => {
@@ -38,6 +39,7 @@ const Home = () => {
             groundColor="#000000"
             intensity={1}
           />
+          <Sky />
           <Island
             position={islandPosition}
             scale={islandScale}
