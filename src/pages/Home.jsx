@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader.jsx";
 import Island from "../models/Island.jsx";
@@ -7,9 +7,27 @@ import Bird from "../models/Bird.jsx";
 import Plane from "../models/Plane.jsx";
 import HomePopup from "../components/HomePopup.jsx";
 
+import sakura from "../assets/sakura.mp3";
+import { soundOff, soundOn } from "../assets/icons/index.js";
+
 const Home = () => {
+  const audioRef = useRef(new Audio(sakura));
+  audioRef.current.volume = 0.4;
+  audioRef.current.loop = true;
+
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+
+  useEffect(() => {
+    if (isPlayingAudio) {
+      audioRef.current.play();
+    }
+
+    return () => {
+      audioRef.current.pause();
+    };
+  }, [isPlayingAudio]);
 
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
@@ -78,6 +96,15 @@ const Home = () => {
           />
         </Suspense>
       </Canvas>
+
+      <div className="absolute bottom-2 left-2">
+        <img
+          src={!isPlayingAudio ? soundOff : soundOn}
+          alt="jukebox"
+          onClick={() => setIsPlayingAudio(!isPlayingAudio)}
+          className="w-10 h-10 cursor-pointer object-contain"
+        />
+      </div>
     </section>
   );
 };
