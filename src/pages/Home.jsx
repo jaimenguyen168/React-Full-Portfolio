@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader.jsx";
 import Island from "../models/Island.jsx";
 import Sky from "../models/Sky.jsx";
-import Bird from "../models/Bird.jsx";
+import Bee from "../models/Bee.jsx";
 import Plane from "../models/Plane.jsx";
 import HomePopup from "../components/HomePopup.jsx";
 
@@ -78,7 +78,7 @@ const Home = () => {
             groundColor="#000000"
             intensity={1}
           />
-          <Bird />
+          <Bee />
           <Sky isRotating={isRotating} />
           <Island
             position={islandPosition}
