@@ -9,6 +9,7 @@ import HomePopup from "../components/HomePopup.jsx";
 
 import sakura from "../assets/sakura.mp3";
 import { soundOff, soundOn } from "../assets/icons/index.js";
+import {Balloon} from "../models/Balloon.jsx";
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
@@ -79,6 +80,7 @@ const Home = () => {
             intensity={1}
           />
           <Bee />
+          <Balloon />
           <Sky isRotating={isRotating} />
           <Island
             position={islandPosition}
