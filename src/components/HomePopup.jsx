@@ -16,30 +16,30 @@ const renderContent = {
   1: (
     <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
       Hi, I'm
-      <span className="font-semibold mx-2 text-white">Jaime</span>
+      <span className="font-semibold mx-2 text-white">Jaime Nguyen</span>
       👋
-      <br />A Software Engineer from USA 🇺🇸
+      <br />Aspiring Software Engineer from Philadelphia
     </h1>
   ),
   2: (
     <InfoBox
-      text="Worked with many companies and picked up many skills along the way"
+      text="Passionate CS undergrad building full-stack apps and constantly expanding my skills. Always eager to learn and grow in tech!"
       link="/about"
-      buttonTitle="Learn more"
+      buttonTitle="About Me"
     />
   ),
   3: (
     <InfoBox
-      text="Led multiple projects from scratch over the years. Curious to learn more?"
+      text="Built multiple mobile and web apps through self-guided learning and tutorials—explore my projects to see how I apply coding skills to grow as a developer!"
       link="/projects"
-      buttonTitle="Visit my portfolio"
+      buttonTitle="Visit My Portfolio"
     />
   ),
   4: (
     <InfoBox
-      text="Need a project done or looking for a dev? I'm just a few keystrokes away"
+      text="Looking for a passionate developer to bring your ideas to life? Let's collaborate and build something amazing together!"
       link="/contact"
-      buttonTitle="Let's talk"
+      buttonTitle="Contact Me"
     />
   ),
 };
