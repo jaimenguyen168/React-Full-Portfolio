@@ -24,9 +24,15 @@ import {
   tailwindcss,
   threads,
   typescript,
+  swiftui,
 } from "../assets/icons";
 
 export const skills = [
+  {
+    imageUrl: swiftui,
+    name: "SwiftUI",
+    type: "Frontend"
+  },
   {
     imageUrl: css,
     name: "CSS",

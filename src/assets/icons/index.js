@@ -26,6 +26,7 @@ import arrow from "./arrow.svg";
 import contact from "./contact.svg";
 import soundOn from "./soundon.png";
 import soundOff from "./soundoff.png";
+import swiftui from "./swiftui.svg";
 
 export {
   css,
@@ -56,4 +57,5 @@ export {
   contact,
   soundOn,
   soundOff,
+  swiftui
 };
