@@ -20,9 +20,16 @@ const About = () => {
       </h1>
 
       <div className="mt-5 flex flex-col gap-3 text-slate-500">
-        <p>
-          Software Engineer based in USA, specializing in technical education
-          through hands-on learning and building applications.
+        <p className="text-justify">
+          As a soon-to-be Computer Science graduate with a passion for building
+          seamless and engaging mobile and web applications, I love focusing on
+          the details—crafting intuitive user interfaces, optimizing user
+          experience, and ensuring efficient backend performance. As a
+          self-learner, I’m always exploring new technologies and refining my
+          skills to build applications that are not only functional but also
+          enjoyable to use. I'm eager to collaborate, grow, and contribute to a
+          team where I can apply my knowledge while continuously learning from
+          experienced professionals.
         </p>
       </div>
 
@@ -30,8 +37,12 @@ const About = () => {
         <h3 className="subhead-text">My Skills</h3>
 
         <div className="mt-16 flex flex-wrap gap-12">
-          {skills.map(({ imageUrl, name }) => (
-            <div className="block-container w-20 h-20" key={name}>
+          {skills.map(({ imageUrl, name, path }) => (
+            <div
+              className="block-container w-20 h-20"
+              key={name}
+              onClick={() => window.open(path, "_blank")}
+            >
               <div className="btn-back rounded-xl" />
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <img
@@ -49,8 +60,13 @@ const About = () => {
         <h3 className="subhead-text">Work Experience.</h3>
         <div className="mt-5 flex flex-col gap-3 text-slate-500">
           <p>
-            I've worked with all sorts of companies, leveling up my skills and
-            teaming up with smart people. Here's the rundown:
+            I’ve developed strong problem-solving and communication skills
+            through my roles as a Lab Consultant and Tutor. My experience also
+            includes building app projects that demonstrate my technical
+            abilities. For more details, feel free to check out my{" "}
+            <a href="/projects">
+              <span className="text-blue-400 font-semibold">portfolio!</span>
+            </a>
           </p>
         </div>
       </div>

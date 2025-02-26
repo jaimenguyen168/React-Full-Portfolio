@@ -27,6 +27,13 @@ import contact from "./contact.svg";
 import soundOn from "./soundon.png";
 import soundOff from "./soundoff.png";
 import swiftui from "./swiftui.svg";
+import kotlin from "./kotlin.svg";
+import vite from "./vite.svg";
+import python from "./python.svg";
+import firebase from "./firebase.svg";
+import expo from "./expo.svg";
+import temple from "./temple.svg";
+import howard from "./howard.png";
 
 export {
   css,
@@ -57,5 +64,12 @@ export {
   contact,
   soundOn,
   soundOff,
-  swiftui
+  swiftui,
+  kotlin,
+  vite,
+  python,
+  firebase,
+  expo,
+  temple,
+  howard,
 };
