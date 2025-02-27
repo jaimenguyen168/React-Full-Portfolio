@@ -1,21 +1,16 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
 import {
   car,
   contact,
   css,
-  estate,
   git,
   github,
   javascript,
   linkedin,
   nextjs,
   nodejs,
-  pricewise,
   react,
-  snapgram,
   summiz,
   tailwindcss,
-  threads,
   typescript,
   swiftui,
   kotlin,
@@ -24,6 +19,11 @@ import {
   firebase,
   temple,
   howard,
+  britishCouncil,
+  location,
+  headphones,
+  study,
+  library,
 } from "../assets/icons";
 
 export const skills = [
@@ -119,7 +119,8 @@ export const experiences = [
     company_name: "CIS Dept. - Temple University",
     icon: temple,
     iconBg: "#ececec",
-    date: "September 2023 - Present",
+    borderBg: "#94041c",
+    date: "Sep 2023 - Present",
     points: [
       "Started as a Computer Lab Consultant, offering technical support and guidance to faculty and 5000+ students.",
       "Promoted within six months for strong management, technical skills, and problem-solving abilities.",
@@ -133,7 +134,8 @@ export const experiences = [
     company_name: "CIS Dept. - Temple University",
     icon: temple,
     iconBg: "#ececec",
-    date: "September 2024 - Present",
+    borderBg: "#94041c",
+    date: "Sep 2024 - Present",
     points: [
       "Explained complex computer science topics, making them easy to understand for students.",
       "Assisted students tackle coding problems and grasp core programming concepts.",
@@ -146,6 +148,7 @@ export const experiences = [
     company_name: "Math Dept. - Howard Community College",
     icon: howard,
     iconBg: "#ffffff",
+    borderBg: "#033188",
     date: "Sep 2021 - Present",
     points: [
       "Offered tutoring service for 1000+ college students in math, from Algebra to Linear Algebra.",
@@ -153,6 +156,21 @@ export const experiences = [
       "Tracked student progress weekly, offering feedback to improve their skills.",
       "Tailored methods to meet each student's unique needs and challenges.",
       "Used tech tools and resources to make math concepts easier to understand.",
+    ],
+  },
+  {
+    title: "Arts Project Coordinator",
+    company_name: "British Council Inc. (Vietnam)",
+    icon: britishCouncil,
+    iconBg: "#ffffff",
+    borderBg: "#0096e1",
+    date: "Jun 2018 - Jan 2020",
+    points: [
+      "Coordinated EU-funded arts and culture projects to boost cultural exchange and awareness in Vietnam.",
+      "Managed communication with stakeholders, planned logistics, and set up venues for project activities.",
+      'Helped connect 60+ creative hubs nationwide through "Vietnam Creative Hubs" project, linking local artists with international partners.',
+      "Assisted in documenting and archiving Cải Lương (traditional Vietnamese opera) to preserve cultural heritage.",
+      "Supported projects promoting ethnic minority cultures by organizing events and connecting local communities with partners.",
     ],
   },
 ];
@@ -177,51 +195,57 @@ export const socialLinks = [
 
 export const projects = [
   {
-    iconUrl: pricewise,
-    theme: "btn-back-red",
-    name: "Amazon Price Tracker",
+    iconUrl: location,
+    theme: "btn-back-orange",
+    name: "📱 Locally",
     description:
-      "Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.",
-    link: "https://github.com/adrianhajdin/pricewise",
+      "Developed a full-stack, community-oriented mobile app that helps users discover local activities based on their interests while connecting them with the local community.",
+    tech: "React Native | Expo | Firebase | Google Location | Stripe",
+    link: "https://github.com/jaimenguyen168/ReactNative-Locally",
   },
   {
-    iconUrl: threads,
-    theme: "btn-back-green",
-    name: "Full Stack Threads Clone",
+    iconUrl: headphones,
+    theme: "btn-back-yellow",
+    name: "📱 BeatBuddy",
     description:
-      'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-    link: "https://github.com/adrianhajdin/threads",
-  },
-  {
-    iconUrl: car,
-    theme: "btn-back-blue",
-    name: "Car Finding App",
-    description:
-      "Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.",
-    link: "https://github.com/adrianhajdin/project_next13_car_showcase",
-  },
-  {
-    iconUrl: snapgram,
-    theme: "btn-back-pink",
-    name: "Full Stack Instagram Clone",
-    description:
-      "Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.",
-    link: "https://github.com/adrianhajdin/social_media_app",
-  },
-  {
-    iconUrl: estate,
-    theme: "btn-back-black",
-    name: "Real-Estate Application",
-    description:
-      "Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.",
-    link: "https://github.com/adrianhajdin/projects_realestate",
+      "Created an music-focused social platform where users can not only listen, share, and discover music but also interact with new tracks and connect with other music enthusiasts daily.",
+    tech: "Kotlin | Compose | Firebase | MVVM",
+    link: "https://github.com/jaimenguyen168/BeatBuddy",
   },
   {
     iconUrl: summiz,
-    theme: "btn-back-yellow",
-    name: "AI Summarizer Application",
+    theme: "btn-back-red",
+    name: "📱 AI Avatar Chat",
     description:
-      "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
-    link: "https://github.com/adrianhajdin/project_ai_summarizer",
+      "Designed a full-stack and ready-to-ship iOS app where users create custom characters and chat with AI-powered avatars, bringing fun and creative personalities to life.",
+    tech: "SwiftUI | Firebase | OpenAI | RevenueCat | MVVM",
+    link: "https://github.com/jaimenguyen168/SwiftUi-AI-Avatar-Chat",
+  },
+  {
+    iconUrl: study,
+    theme: "btn-back-blue",
+    name: "📱 StudyBop",
+    description:
+      "Built a full-stack mobile app that lets users create or enroll in AI-generated courses. It offers a fun way to preview and practice key concepts, making learning interactive and engaging.",
+    tech: "React Native | Expo | Firebase | Gemini AI",
+    link: "https://github.com/jaimenguyen168/RN-StudyBop.git",
+  },
+  {
+    iconUrl: library,
+    theme: "btn-back-black",
+    name: "🌐 Cool Library",
+    description:
+      "Developed a web app designed to manage book borrowing, track due dates, and automatically send return reminders, making library management simple and efficient.",
+    tech: "React | Next.js | PostgreSQL | Upstash | Resend | ImageKit",
+    link: "https://github.com/jaimenguyen168/React-Library-App",
+  },
+  {
+    iconUrl: summiz,
+    theme: "btn-back-pink",
+    name: "🌐 Idea Pitching",
+    description:
+      "A web app that allows users to pitch their project ideas, browse through others' creative concepts, and connect with like-minded individuals, inspiring collaboration and sparking innovation.",
+    tech: "React | Next.js | Sanity",
+    link: "https://github.com/jaimenguyen168/NextJs-YC-Directory.git",
   },
 ];

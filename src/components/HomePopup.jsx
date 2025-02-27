@@ -18,19 +18,20 @@ const renderContent = {
       Hi, I'm
       <span className="font-semibold mx-2 text-white">Jaime Nguyen</span>
       👋
-      <br />Aspiring Software Engineer from Philadelphia
+      <br />
+      Aspiring Software Engineer from Philadelphia
     </h1>
   ),
   2: (
     <InfoBox
-      text="Passionate CS undergrad building full-stack apps and constantly expanding my skills. Always eager to learn and grow in tech!"
+      text="A motivated CS student skilled in software development, constantly learning and growing in the tech field."
       link="/about"
       buttonTitle="About Me"
     />
   ),
   3: (
     <InfoBox
-      text="Built multiple mobile and web apps through self-guided learning and tutorials—explore my projects to see how I apply coding skills to grow as a developer!"
+      text="Developed multiple mobile and web apps through self-learning. Visit my projects to see how I apply coding skills to grow as a developer!"
       link="/projects"
       buttonTitle="Visit My Portfolio"
     />

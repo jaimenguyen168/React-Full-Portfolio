@@ -34,6 +34,12 @@ import firebase from "./firebase.svg";
 import expo from "./expo.svg";
 import temple from "./temple.svg";
 import howard from "./howard.png";
+import britishCouncil from "./britishcouncil.svg";
+import location from "./location.svg";
+import headphones from "./headphones.svg";
+import aiChat from "./ai-chat.svg";
+import study from "./study.svg";
+import library from "./library.svg";
 
 export {
   css,
@@ -72,4 +78,10 @@ export {
   expo,
   temple,
   howard,
+  britishCouncil,
+  location,
+  headphones,
+  aiChat,
+  study,
+  library,
 };

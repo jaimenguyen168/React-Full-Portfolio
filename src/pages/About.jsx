@@ -23,8 +23,8 @@ const About = () => {
         <p className="text-justify">
           As a soon-to-be Computer Science graduate with a passion for building
           seamless and engaging mobile and web applications, I love focusing on
-          the details—crafting intuitive user interfaces, optimizing user
-          experience, and ensuring efficient backend performance. As a
+          the details—crafting intuitive user interfaces and optimizing their
+          experience—while building scalable and maintainable projects. As a
           self-learner, I’m always exploring new technologies and refining my
           skills to build applications that are not only functional but also
           enjoyable to use. I'm eager to collaborate, grow, and contribute to a
@@ -90,7 +90,7 @@ const About = () => {
               contentStyle={{
                 borderBottom: "8px",
                 borderStyle: "solid",
-                borderBottomColor: exp.iconBg,
+                borderBottomColor: exp.borderBg,
                 boxShadow: "none",
               }}
             >
