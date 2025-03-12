@@ -26,41 +26,58 @@ const Projects = () => {
       </p>
 
       <div className="flex flex-wrap my-20 gap-16">
-        {projects.map(({ name, iconUrl, theme, description, link, tech }) => (
-          <div className="lg:w-[400px] w-full" key={name}>
-            <div className="block-container w-12 h-12">
-              <div className={`btn-back rounded-xl ${theme}`} />
-              <div className="btn-front rounded-xl flex justify-center items-center">
-                <img
-                  src={iconUrl}
-                  alt="project icon"
-                  className="w-1/2 h-1/2 object-contain"
-                />
+        {projects.map(
+          ({ name, iconUrl, theme, description, link, tech, website }) => (
+            <div className="lg:w-[400px] w-full" key={name}>
+              <div className="block-container w-12 h-12">
+                <div className={`btn-back rounded-xl ${theme}`} />
+                <div className="btn-front rounded-xl flex justify-center items-center">
+                  <img
+                    src={iconUrl}
+                    alt="project icon"
+                    className="w-1/2 h-1/2 object-contain"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="mt-5 flex flex-col">
-              <h4 className="text-2xl font-poppins font-semibold">{name}</h4>
-              <p className="mt-2 text-slate-500">{description}</p>
-              <p className="mt-2 font-light text-xs">{tech}</p>
-              <div className="mt-5 flex items-center gap-2 font-poppins">
-                <Link
-                  to={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-blue-600"
-                >
-                  Repository
-                </Link>
-                <img
-                  src={arrow}
-                  alt="arrow"
-                  className="w-4 h-4 object-contain"
-                />
+              <div className="mt-5 flex flex-col">
+                {website ? (
+                  <Link
+                    to={website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-green-400 underline"
+                  >
+                    <h4 className="text-2xl font-poppins font-semibold">
+                      {name}
+                    </h4>
+                  </Link>
+                ) : (
+                  <h4 className="text-2xl font-poppins font-semibold">
+                    {name}
+                  </h4>
+                )}
+                <p className="mt-2 text-slate-500">{description}</p>
+                <p className="mt-2 font-light text-xs">{tech}</p>
+                <div className="mt-5 flex items-center gap-2 font-poppins">
+                  <Link
+                    to={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-blue-600"
+                  >
+                    Repository
+                  </Link>
+                  <img
+                    src={arrow}
+                    alt="arrow"
+                    className="w-4 h-4 object-contain"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ),
+        )}
       </div>
 
       <hr className="border-slate-200" />
