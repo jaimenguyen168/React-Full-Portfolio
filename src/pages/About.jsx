@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { experiences, skills } from "../constants/index.js";
 import {
   VerticalTimeline,
@@ -6,8 +6,36 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import CTA from "../components/CTA.jsx";
+import { fetchSkills } from "../libs/sanityClient.js";
 
 const About = () => {
+  const [mySkills, setMySkills] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const getSkills = async () => {
+      try {
+        const skillsData = await fetchSkills();
+        setMySkills(skillsData);
+        return skillsData; // Return the data if you want to use it
+      } catch (err) {
+        setError(err.message);
+        throw err; // Re-throw if you want to handle the error elsewhere
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    // Call getSkills and log the result
+    getSkills()
+      .then((data) => console.log("Fetched skills:", data))
+      .catch((err) => console.error("Error fetching skills:", err));
+  }, []);
+
+  if (loading) return <div>Loading skills...</div>;
+  if (error) return <div>Error loading skills: {error}</div>;
+
   return (
     <section className="max-container">
       <h1 className="head-text">
@@ -37,7 +65,7 @@ const About = () => {
         <h3 className="subhead-text">My Skills</h3>
 
         <div className="mt-16 flex flex-wrap gap-12">
-          {skills.map(({ imageUrl, name, path }) => (
+          {mySkills.map(({ imageUrl, name, path }) => (
             <div
               className="block-container w-20 h-20"
               key={name}
@@ -73,9 +101,9 @@ const About = () => {
 
       <div className="mt-12 flex">
         <VerticalTimeline>
-          {experiences.map((exp) => (
+          {experiences.map((exp, index) => (
             <VerticalTimelineElement
-              key={exp.company_name}
+              key={index}
               date={exp.date}
               iconStyle={{ background: exp.iconBg }}
               icon={

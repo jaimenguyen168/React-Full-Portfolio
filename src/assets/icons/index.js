@@ -40,8 +40,11 @@ import headphones from "./headphones.svg";
 import aiChat from "./ai-chat.svg";
 import study from "./study.svg";
 import library from "./library.svg";
+import chatbot from "./chatbot.png";
+import sql from "./sql.png";
 
 export {
+  sql,
   css,
   express,
   git,
@@ -84,4 +87,5 @@ export {
   aiChat,
   study,
   library,
+  chatbot,
 };

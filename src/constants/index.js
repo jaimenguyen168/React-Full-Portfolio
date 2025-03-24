@@ -1,5 +1,4 @@
 import {
-  car,
   contact,
   css,
   git,
@@ -24,6 +23,9 @@ import {
   headphones,
   study,
   library,
+  chatbot,
+  sql,
+  python,
 } from "../assets/icons";
 
 export const skills = [
@@ -62,6 +64,12 @@ export const skills = [
     name: "JavaScript",
     type: "Frontend",
     path: "https://www.javascript.com/",
+  },
+  {
+    imageUrl: python,
+    name: "Python",
+    type: "Fullstack",
+    path: "https://www.python.org/",
   },
   {
     imageUrl: firebase,
@@ -111,6 +119,12 @@ export const skills = [
     type: "Frontend",
     path: "https://www.w3.org/Style/CSS/Overview.en.html",
   },
+  {
+    imageUrl: sql,
+    name: "SQL",
+    type: "Database",
+    path: "https://sqlbolt.com/",
+  },
 ];
 
 export const experiences = [
@@ -122,7 +136,7 @@ export const experiences = [
     borderBg: "#94041c",
     date: "Sep 2023 - Present",
     points: [
-      "Started as a Computer Lab Consultant, offering technical support and guidance to faculty and 5000+ students.",
+      "Started as a Computer Lab Consultant, offering technical support and guidance to faculty and 4000+ students.",
       "Promoted within six months for strong management, technical skills, and problem-solving abilities.",
       "Improved lab workflows, enhancing the experience for students, instructors, and fellow consultants.",
       "Mentored and trained new hires, fostering teamwork and performance.",
@@ -213,6 +227,16 @@ export const projects = [
     link: "https://github.com/jaimenguyen168/BeatBuddy",
   },
   {
+    iconUrl: chatbot,
+    theme: "btn-back-orange",
+    name: "@ AI Assistant Chat",
+    description:
+      "Customized a web app that allows users to create or choose AI assistants, customize their behavior with instructions, and optimize interactions using AI models from Eden AI.",
+    tech: "React | Next.js | Convex | Shadcn | EdenAI | Stripe | Google OAuth",
+    link: "https://github.com/jaimenguyen168/NextJS-AI-Assistants",
+    website: "https://next-js-ai-assistants.vercel.app/",
+  },
+  {
     iconUrl: summiz,
     theme: "btn-back-red",
     name: "📱 AI Avatar Chat",
@@ -233,19 +257,21 @@ export const projects = [
   {
     iconUrl: library,
     theme: "btn-back-black",
-    name: "🌐 Cool Library",
+    name: "@ Cool Library",
     description:
       "Developed a web app designed to manage book borrowing, track due dates, and automatically send return reminders, making library management simple and efficient.",
     tech: "React | Next.js | PostgreSQL | Upstash | Resend | ImageKit",
     link: "https://github.com/jaimenguyen168/React-Library-App",
+    website: "https://react-library-app-azure.vercel.app",
   },
   {
     iconUrl: summiz,
     theme: "btn-back-pink",
-    name: "🌐 Idea Pitching",
+    name: "@ Idea Pitching",
     description:
       "A web app that allows users to pitch their project ideas, browse through others' creative concepts, and connect with like-minded individuals, inspiring collaboration and sparking innovation.",
     tech: "React | Next.js | Sanity",
     link: "https://github.com/jaimenguyen168/NextJs-YC-Directory.git",
+    website: "https://next-js-yc-directory-lime.vercel.app",
   },
 ];
