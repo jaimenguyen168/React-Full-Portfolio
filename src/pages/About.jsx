@@ -1,36 +1,46 @@
 import React, { useState, useEffect } from "react";
-import { experiences, skills } from "../constants/index.js";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import CTA from "../components/CTA.jsx";
-import { fetchSkills } from "../libs/sanityClient.js";
+import {fetchExperience, fetchSkills, urlFor} from "../libs/sanityClient.js";
 
 const About = () => {
   const [mySkills, setMySkills] = useState([]);
+  const [myExperience, setMyExperience] = useState([]);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const getSkills = async () => {
+    const getData = async () => {
       try {
-        const skillsData = await fetchSkills();
-        setMySkills(skillsData);
-        return skillsData; // Return the data if you want to use it
+        const [skillsData, experienceData] = await Promise.all([
+          fetchSkills(),
+          fetchExperience(),
+        ]);
+
+        const sortedSkills = skillsData.sort(
+            (a, b) => new Date(a._createdAt).getTime() - new Date(b._createdAt).getTime()
+        );
+
+        const sortedExperiences = experienceData.sort(
+            (a, b) => new Date(a._createdAt).getTime() - new Date(b._createdAt).getTime()
+        );
+
+        setMySkills(sortedSkills);
+        setMyExperience(sortedExperiences);
       } catch (err) {
         setError(err.message);
-        throw err; // Re-throw if you want to handle the error elsewhere
       } finally {
         setLoading(false);
       }
     };
 
-    // Call getSkills and log the result
-    getSkills()
-      .then((data) => console.log("Fetched skills:", data))
-      .catch((err) => console.error("Error fetching skills:", err));
+    getData()
+        .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   if (loading) return <div>Loading skills...</div>;
@@ -65,7 +75,7 @@ const About = () => {
         <h3 className="subhead-text">My Skills</h3>
 
         <div className="mt-16 flex flex-wrap gap-12">
-          {mySkills.map(({ imageUrl, name, path }) => (
+          {mySkills.map(({ image, name, path }) => (
             <div
               className="block-container w-20 h-20"
               key={name}
@@ -74,7 +84,7 @@ const About = () => {
               <div className="btn-back rounded-xl" />
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <img
-                  src={imageUrl}
+                  src={urlFor(image).url()}
                   alt={name}
                   className="w-1/2 h-1/2 object-contain"
                 />
@@ -85,7 +95,7 @@ const About = () => {
       </div>
 
       <div className="py-16">
-        <h3 className="subhead-text">Work Experience.</h3>
+        <h3 className="subhead-text">Work Experience</h3>
         <div className="mt-5 flex flex-col gap-3 text-slate-500">
           <p>
             I’ve developed strong problem-solving and communication skills
@@ -101,7 +111,7 @@ const About = () => {
 
       <div className="mt-12 flex">
         <VerticalTimeline>
-          {experiences.map((exp, index) => (
+          {myExperience.map((exp, index) => (
             <VerticalTimelineElement
               key={index}
               date={exp.date}
@@ -109,7 +119,7 @@ const About = () => {
               icon={
                 <div className="flex justify-center items-center w-full h-full">
                   <img
-                    src={exp.icon}
+                    src={urlFor(exp.icon).url()}
                     alt={exp.company_name}
                     className="w-[60%] h-[60%] object-contain"
                   />

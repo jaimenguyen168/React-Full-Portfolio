@@ -6,10 +6,13 @@ export default defineType({
     type: "document",
     fields: [
         defineField({
-            name: "imageUrl",
-            title: "Image URL",
-            type: "url",
-            description: "Link to the skill's image or icon",
+            name: "image",
+            title: "Skill Image",
+            type: "image",
+            description: "Upload an image for this skill",
+            options: {
+                hotspot: true,
+            },
         }),
         defineField({
             name: "name",
