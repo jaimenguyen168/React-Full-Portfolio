@@ -20,3 +20,16 @@ export const fetchSkills = async () => {
 export const fetchExperience = async () => {
   return await sanityClient.fetch(`*[_type == "experience"]`);
 };
+
+export const fetchSocialLinks = async () => {
+  return await sanityClient.fetch(`*[_type == "socialLinks"]`);
+};
+
+export const fetchProjectsWithSkills = async () => {
+  return await sanityClient.fetch(`
+    *[_type == "project"] {
+      ...,
+      tech[]->{name, path},
+    }
+  `);
+};

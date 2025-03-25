@@ -74,6 +74,59 @@ export type Slug = {
   source?: string
 }
 
+export type Project = {
+  _id: string
+  _type: 'project'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  iconUrl?: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  theme?: string
+  name?: string
+  description?: string
+  tech?: Array<{
+    _ref: string
+    _type: 'reference'
+    _weak?: boolean
+    _key: string
+    [internalGroqTypeReferenceTo]?: 'skill'
+  }>
+  link?: string
+  website?: string
+  projectType?: 'web' | 'mobile' | 'other'
+}
+
+export type SocialLinks = {
+  _id: string
+  _type: 'socialLinks'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  name?: string
+  iconUrl?: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  link?: string
+}
+
 export type Experience = {
   _id: string
   _type: 'experience'
@@ -117,7 +170,7 @@ export type Skill = {
     _type: 'image'
   }
   name?: string
-  type?: 'Frontend' | 'Backend' | 'Full Stack' | 'Other'
+  type?: 'Frontend' | 'Backend' | 'Full Stack' | 'Database' | 'Version Control' | 'Other'
   path?: string
 }
 
@@ -185,6 +238,8 @@ export type AllSanitySchemaTypes =
   | SanityFileAsset
   | Geopoint
   | Slug
+  | Project
+  | SocialLinks
   | Experience
   | Skill
   | SanityImageCrop

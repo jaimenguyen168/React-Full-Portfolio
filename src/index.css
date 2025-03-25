@@ -138,6 +138,47 @@ body:has(.card[data-color="green"]:hover) {
     background: linear-gradient(135deg, #e81cff -20%, #40c9ff 120%);
 }
 
+.block-container .btn-back-purple {
+    background: linear-gradient(135deg, #6a1b9a -20%, #8e24aa 120%);
+}
+
+.block-container .btn-back-teal {
+    background: linear-gradient(135deg, #00695c -20%, #26a69a 120%);
+}
+
+.block-container .btn-back-indigo {
+    background: linear-gradient(135deg, #3f51b5 -20%, #536dfe 120%);
+}
+
+.block-container .btn-back-lime {
+    background: linear-gradient(135deg, #cddc39 -20%, #8bc34a 120%);
+}
+
+.block-container .btn-back-cyan {
+    background: linear-gradient(135deg, #00bcd4 -20%, #18ffff 120%);
+}
+
+.block-container .btn-back-teal-light {
+    background: linear-gradient(135deg, #80e0c7 -20%, #00c9a7 120%);
+}
+
+.block-container .btn-back-sunset {
+    background: linear-gradient(135deg, #ff5e62 -20%, #ff9966 120%);
+}
+
+.block-container .btn-back-mint {
+    background: linear-gradient(135deg, #98ff98 -20%, #00bfae 120%);
+}
+
+.block-container .btn-back-sky {
+    background: linear-gradient(135deg, #00aaff -20%, #89c6ff 120%);
+}
+
+.block-container .btn-back-saffron {
+    background: linear-gradient(135deg, #f1c40f -20%, #f39c12 120%);
+}
+
+
 .block-container .btn-back-black {
     background: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
 }

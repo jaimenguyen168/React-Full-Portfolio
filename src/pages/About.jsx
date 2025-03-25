@@ -6,6 +6,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import CTA from "../components/CTA.jsx";
 import {fetchExperience, fetchSkills, urlFor} from "../libs/sanityClient.js";
+import Loading from "../components/Loading.js";
 
 const About = () => {
   const [mySkills, setMySkills] = useState([]);
@@ -30,7 +31,7 @@ const About = () => {
             (a, b) => new Date(a._createdAt).getTime() - new Date(b._createdAt).getTime()
         );
 
-        setMySkills(sortedSkills);
+        setMySkills(sortedSkills.filter((skill) => skill.type !== "Other"));
         setMyExperience(sortedExperiences);
       } catch (err) {
         setError(err.message);
@@ -43,7 +44,7 @@ const About = () => {
         .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  if (loading) return <div>Loading skills...</div>;
+  if (loading) return <Loading />;
   if (error) return <div>Error loading skills: {error}</div>;
 
   return (

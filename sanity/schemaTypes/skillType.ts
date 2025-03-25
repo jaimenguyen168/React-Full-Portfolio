@@ -25,7 +25,7 @@ export default defineType({
             title: "Type",
             type: "string",
             options: {
-                list: ["Frontend", "Backend", "Full Stack", "Other"],
+                list: ["Frontend", "Backend", "Full Stack", "Database", "Version Control", "Other"],
             },
         }),
         defineField({
